@@ -1,11 +1,13 @@
 file_format: "1"
-id: swweeep
-name: swweeep
+id: scriptera
+name: scriptera
 type: shield
-url: https://github.com/sadekbaroudi/sweep36
+url: https://github.com/reticivis/scriptera
 requires: [pro_micro]
+exposes: [i2c_oled]
 features:
   - keys
+  - display
 siblings:
-  - swweeep_left
-  - swweeep_right
+  - scriptera_left
+  - scriptera_right

@@ -1,17 +1,17 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_SWWEEEP_LEFT
+if SHIELD_SCRIPTERA_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "swweeep"
+    default "scriptera"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_SWWEEEP_LEFT || SHIELD_SWWEEEP_RIGHT
+if SHIELD_SCRIPTERA_LEFT || SHIELD_SCRIPTERA_RIGHT
 config ZMK_SPLIT
     default y
 endif

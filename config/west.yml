@@ -3,11 +3,17 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     # Additional modules containing boards/shields/custom code can be listed here as well
+    - name: sadekbaroudi
+      url-base: https://github.com/sadekbaroudi
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-fingerpunch-controllers
+      remote: sadekbaroudi
+      revision: main
+      import: config/deps.yml
   self:
     path: config
