@@ -26,5 +26,3 @@
         label = "KSCAN0";
     };
 };
-
-&nice_view_spi { cs-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>; };
