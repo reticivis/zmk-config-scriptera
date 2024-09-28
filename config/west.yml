@@ -11,10 +11,10 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: nice_view_adapter
-      remote: zmkfirmware
-      revision: main
-      import: app/boards/shields/nice_view_adapter/nice_view_adapter.zmk.yml
+    #- name: nice_view_adapter
+    #  remote: zmkfirmware
+    #  revision: main
+    #  import: app/boards/shields/nice_view_adapter/nice_view_adapter.zmk.yml
     - name: zmk-fingerpunch-controllers
       remote: sadekbaroudi
       revision: main
