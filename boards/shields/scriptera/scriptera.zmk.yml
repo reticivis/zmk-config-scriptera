@@ -4,7 +4,7 @@ name: scriptera
 type: shield
 url: https://github.com/reticivis/scriptera
 requires: [pro_micro]
-exposes: [i2c_oled]
+exposes: [nice_view_header]
 features:
   - keys
   - display
