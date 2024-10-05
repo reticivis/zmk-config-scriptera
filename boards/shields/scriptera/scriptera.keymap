@@ -86,21 +86,6 @@
                 input-code = <INPUT_REL_WHEEL>;
         };
 
-        keymap {
-                compatible = "zmk,keymap";
-                DEF_layer { 
-                        bindings = < &mo MSK .... ... >;
-                };
-                MSK_layer {
-                        bindings = < ..... &mkp LCLK  &mo MSC >;
-                };
-                MSC_layer {
-                        bindings = < ..... &mkp LCLK  ... >;
-                };
-       };
-
-};
-
 
 // -----------------
 
