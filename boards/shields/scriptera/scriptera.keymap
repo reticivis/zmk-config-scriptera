@@ -4,23 +4,6 @@
 
 &nice_view_spi { cs-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>; };
 
-// Trackball info
-
-/ {
-	/* assign `input-listener` to all pointing devices */
-	/* &pd0 on central, &pd1 on peripheral */
-
-        trackball_central_listener {
-                compatible = "zmk,input-listener";
-                device = <&pd0>;
-	};
-
-        trackball_peripheral_listener {
-                compatible = "zmk,input-listener";
-                device = <&pd1>;
-	};
-}/
-
 /* include &mkp  */
 #include <behaviors/mouse_keys.dtsi>
 
