@@ -21,6 +21,19 @@
 #define SET 3 // settings layer
 
 / {
+        /* assign `input-listener` to all pointing devices */
+        /* &pd0 on central, &pd1 on peripheral */
+
+            trackball_central_listener {
+                    compatible = "zmk,input-listener";
+                    device = <&pd0>;
+        };
+
+            trackball_peripheral_listener {
+                    compatible = "zmk,input-listener";
+                    device = <&pd1>;
+        };
+
         /* input config for mouse move mode on default layer (DEF & MSK) */
         tb0_mmv_ibl {
                 /* new forked compatible name */
