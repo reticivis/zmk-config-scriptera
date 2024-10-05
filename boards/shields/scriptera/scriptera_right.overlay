@@ -58,13 +58,13 @@
 };
 
 
-/* enable &pd0 on split peripheral. typical input device for zephyr input subsystem. */
+/* enable &pd1 on split peripheral. typical input device for zephyr input subsystem. */
 /* NOTE 1: use the same device alias (&pd0) on central and peripheral(s) is alright. */
 /* NOTE 2: input event shall be intecepted by module `zmk-split-peripheral-input-relay`. */
 
 /* this is an alias of your actual wired input device sensor in your peripheral shield. */
 /* e.g. SPI optical sensor for trackball */
-&pd0 {
+&pd1 {
 	status = "okay";
 	/* the rest of sensor config should be config here, e.g. gpios */
     compatible = "pixart,pmw3610";
@@ -90,7 +90,7 @@
 		/* peripheral side input device, used to... */
 		/*  - be intecepted on peripheral; */
 		/*  - and then, be resurrected as `zmk,virtual-device` on central; */
-		device = <&pd0>;
+		device = <&pd1>;
 		
 		/* channel id, used to be be transfered along with all input events. */
 		/* NOTE 1: pick any 8bit integer. (1 - 255) */
