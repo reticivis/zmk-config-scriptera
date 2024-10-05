@@ -13,7 +13,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: feat/pointers-move-scroll
       import: app/west.yml
     #- name: nice_view_adapter
     #  remote: zmkfirmware
@@ -23,10 +23,6 @@ manifest:
       remote: sadekbaroudi
       revision: main
       import: config/deps.yml
-    - name: zmk
-      remote: zmkfirmware
-      revision: feat/pointers-move-scroll
-      import: app/west.yml
     - name: zmk-split-peripheral-input-relay
       remote: badjeff
       revision: main
