@@ -5,6 +5,7 @@
  */
 
 #include "scriptera.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 // Repin
 &pinctrl {
