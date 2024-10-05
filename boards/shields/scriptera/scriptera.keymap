@@ -17,7 +17,7 @@
 #define DEF 0 // default layer
 #define MSK 1 // mouse key layer
 #define MSC 2 // mouse scoll layer
-#define SETTINGS 5
+#define SET 3 // settings layer
 
 / {
         /* input config for mouse move mode on default layer (DEF & MSK) */
@@ -115,10 +115,10 @@
             label = "Msk";
             bindings = <
 &kp N1             &kp N2        &kp N3    &kp N4       &kp N5          &kp N6      &kp N7          &kp N8            &kp N9      &kp N0
-&kp C_VOLUME_UP    &kp KP_MINUS  &kp UP    &kp KP_PLUS  &kp KP_EQUAL    &kp ENTER   &kp RIGHT_GUI   &kp LEFT_ALT      &kp TAB     &kp BACKSPACE
+&kp C_VOLUME_UP    &kp KP_MINUS  &kp UP    &kp KP_PLUS  &kp KP_EQUAL    &kp ENTER   &mkp LCLK       &mo MSC           &kp TAB     &kp BACKSPACE
 &kp C_VOLUME_DOWN  &kp LEFT      &kp DOWN  &kp RIGHT    &kp ASTRK       &kp ESCAPE  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &none
 &trans             &trans                                                                                             &trans      &trans
-            &mkp LCLK  &mo MSC >;
+            >;
         };
 
         // Symbols organized by use
@@ -127,16 +127,16 @@
             label = "Msc";
             bindings = <
 &kp EXCLAMATION  &kp AT        &kp HASH        &kp DOLLAR         &kp PERCENT            &kp EXCL        &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp CARET      &kp TILDE
-&kp ESCAPE       &kp GRAVE     &kp APOSTROPHE  &kp DOUBLE_QUOTES  &mt LG(PLUS) PLUS      &kp MINUS       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPERSAND  &kp PIPE
+&kp ESCAPE       &kp GRAVE     &kp APOSTROPHE  &kp DOUBLE_QUOTES  &mt LG(PLUS) PLUS      &kp MINUS       &mkp LCLK             &kp RIGHT_PARENTHESIS  &kp AMPERSAND  &kp PIPE
 &kp TAB          &kp LEFT_GUI  &kp ASTERISK    &kp KP_EQUAL       &mt LG(MINUS) MINUS    &kp UNDERSCORE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &none
 &trans           &mo 3                                                                                                                                &trans         &trans
-            &mkp LCLK >;
+            >;
         };
 
         // Used to change the keyboard's settings
 
-        settings_layer {
-            label = "Settings";
+        SET_layer {
+            label = "Set";
             bindings = <
 &bootloader  &none  &none  &bt BT_CLR  &bt BT_SEL 0    &bt BT_SEL 3  &none  &none  &none  &bootloader
 &none        &none  &none  &none       &bt BT_SEL 1    &bt BT_SEL 4  &none  &none  &none  &none
