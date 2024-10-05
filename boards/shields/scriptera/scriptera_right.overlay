@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <scriptera.dtsi>
-#include <behaviors.dtsi>
+#include "scriptera.dtsi"
 
 // Repin
 &pinctrl {
