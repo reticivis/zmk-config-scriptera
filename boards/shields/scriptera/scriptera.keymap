@@ -1,11 +1,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+/* include &mkp  */
+#include <behaviors/mouse_keys.dtsi>
 
 &nice_view_spi { cs-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>; };
 
-/* include &mkp  */
-#include <behaviors/mouse_keys.dtsi>
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <210>;
+    quick_tap_ms = <0>;
+    retro-tap;
+};
 
 // index of keymap layers
 #define DEF 0 // default layer
@@ -86,17 +92,8 @@
                 input-code = <INPUT_REL_WHEEL>;
         };
 
-
 // -----------------
 
-&mt {
-    flavor = "tap-preferred";
-    tapping_term_ms = <210>;
-    quick_tap_ms = <0>;
-    retro-tap;
-};
-
-/ {
     keymap {
         compatible = "zmk,keymap";
 
