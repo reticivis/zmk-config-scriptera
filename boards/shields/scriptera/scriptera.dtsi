@@ -60,7 +60,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;
 
-    tball0: pd@0 {
+    tball0: tball0@0 {
         status = "disabled";
         compatible = "pixart,pmw3610";
         reg = <0>;
@@ -72,7 +72,7 @@
         y-input-code = <INPUT_REL_Y>;
     };
 
-    tball1: pd@1 {
+    tball1: tball1@0 {
         status = "disabled";
         compatible = "pixart,pmw3610";
         reg = <0>;
