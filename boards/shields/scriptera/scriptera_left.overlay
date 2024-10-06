@@ -18,11 +18,11 @@
 };
 
 &spi0 {
-    status = "disabled"; // change to okay to enable
+    status = "okay"; // change to okay to enable
 };
 
 &tball0 {
-	status = "disabled"; // change to okay to enable
+	status = "okay"; // change to okay to enable
 };
 
 / {
