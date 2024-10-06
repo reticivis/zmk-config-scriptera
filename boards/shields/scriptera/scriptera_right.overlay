@@ -1,32 +1,9 @@
-/*
- * Copyright (c) 2022 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include "scriptera.dtsi"
-
-&tball1 {
-	status = "okay";
-};
-
-/ {
-	vtball0: virtual_input0 {
-		compatible = "zmk,virtual-input";
-	};
-	vtball1: virtual_input1 {
-		compatible = "zmk,virtual-input";
-	};
-	input_relay_config_103 {
-		compatible = "zmk,split-peripheral-input-relay";
-		device = <&tball1>;
-		relay-channel = <103>;
-	};
-};
 
 &default_transform {
     col-offset = <5>;
 };
+
 &kscan0 {
     diode-direction = "col2row";
     col-gpios
@@ -42,4 +19,26 @@
         , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW2
         , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW3
     ;
+};
+
+&spi0 {
+    status = "okay";
+};
+
+&tball1 {
+	status = "okay";
+};
+
+/ {
+	vtball0: virtual_input0 {
+		compatible = "zmk,virtual-input";
+	};
+	vtball1: virtual_input1 {
+		compatible = "zmk,virtual-input";
+	};
+	input_relay_config_102 {
+		compatible = "zmk,split-peripheral-input-relay";
+		device = <&tball1>;
+		relay-channel = <102>;
+	};
 };

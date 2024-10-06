@@ -1,21 +1,16 @@
-# Copyright (c) 2022 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
 if SHIELD_SCRIPTERA_LEFT
 
 config ZMK_KEYBOARD_NAME
     default "scriptera"
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
+
 endif
 
+
 if SHIELD_SCRIPTERA_LEFT || SHIELD_SCRIPTERA_RIGHT
+
 config ZMK_SPLIT
     default y
+
 endif 
-
-if ZMK_DISPLAY
-config I2C
-    default y
-endif # ZMK_DISPLAY
-

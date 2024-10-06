@@ -1,9 +1,14 @@
 #include <behaviors.dtsi>
+#include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-/* include &mkp  */
-#include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/mouse.h>
+
+// index of keymap layers
+#define DEF 0 // default layer
+#define MSK 1 // mouse key layer
+#define MSC 2 // mouse scoll layer
+#define SET 3 // settings layer
 
 &nice_view_spi { cs-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>; };
 
@@ -14,11 +19,7 @@
     retro-tap;
 };
 
-// index of keymap layers
-#define DEF 0 // default layer
-#define MSK 1 // mouse key layer
-#define MSC 2 // mouse scoll layer
-#define SET 3 // settings layer
+// -----------------
 
 / {
     /* input config for mouse move mode on default layer (DEF & MSK) */
@@ -31,9 +32,28 @@
             y-input-code = <INPUT_REL_Y>;
             scale-multiplier = <1>;
             scale-divisor = <1>;
-            //bindings = <&ib_tog_layer MSK>;
-            //rotate-deg = <315>;
     };
+    tb1_mmv_ibl {
+            compatible = "zmk,input-behavior-listener";
+            device = <&vtball1>;
+            layers = <DEF MSK>;
+            evt-type = <INPUT_EV_REL>;
+            x-input-code = <INPUT_REL_X>;
+            y-input-code = <INPUT_REL_Y>;
+            scale-multiplier = <1>;
+            scale-divisor = <1>;
+    };
+
+    // trackball_snipe_listener {
+    //     compatible = "zmk,input-behavior-listener";
+    //     device = <&vtrackball>;
+    //     layers = <3>;
+    //     evt-type = <INPUT_EV_REL>;
+    //     x-input-code = <INPUT_REL_X>;
+    //     y-input-code = <INPUT_REL_Y>;
+    //     scale-multiplier = <1>;
+    //     scale-divisor = <16>;
+    // };
 
     /* input config for mouse scroll mode on momentary mouse scoll layer (MSC) */
     tb0_msl_ibl {
@@ -43,17 +63,24 @@
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_MISC>;
             y-input-code = <INPUT_REL_WHEEL>;
-            y-invert;
-            //rotate-deg = <315>;
-            bindings = <&ib_wheel_scaler 1 8>;
+            bindings = <&ib_wheel_scaler 1 25>;
+    };
+    tb1_msl_ibl {
+            compatible = "zmk,input-behavior-listener";
+            device = <&vtball1>;
+            layers = <MSC>;
+            evt-type = <INPUT_EV_REL>;
+            x-input-code = <INPUT_REL_MISC>;
+            y-input-code = <INPUT_REL_WHEEL>;
+            bindings = <&ib_wheel_scaler 1 25>;
     };
 
     /* adjust cooldown waiting period for mouse key layer (MSK) after activated */
-    ib_tog_layer: ib_tog_layer {
-            compatible = "zmk,input-behavior-tog-layer";
-            #binding-cells = <1>;
-            time-to-live-ms = <1000>;
-    };
+    //ib_tog_layer: ib_tog_layer {
+    //        compatible = "zmk,input-behavior-tog-layer";
+    //        #binding-cells = <1>;
+    //        time-to-live-ms = <1000>;
+    //};
 
     /* define a resolution down scaler only for INPUT_REL_WHEEL */
     ib_wheel_scaler: ib_wheel_scaler {
@@ -61,6 +88,28 @@
             #binding-cells = <2>;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_WHEEL>;
+    };
+
+// -----------------
+
+    behaviors {
+        tsl: behavior_trackball_scroll {
+            compatible = "zmk,behavior-point-device-incremental";
+            #trackball-binding-cells = <0>;
+            mode = "scroll-mode";
+            flavor = "default";
+            scale_mode = "dividor";
+            scale_factor = <4>;
+            smoothing;
+        };
+
+        tkp_fast: behavior_trackball_key_press {
+            compatible = "zmk,behavior-point-device-directional";
+            #trackball-binding-cells = <4>;
+            mode = "distance-mode";
+            flavor = "2-dim";
+            step_size = <50>;
+        };
     };
 
 // -----------------
