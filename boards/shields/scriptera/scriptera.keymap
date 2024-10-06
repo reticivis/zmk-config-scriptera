@@ -91,11 +91,11 @@
                 bindings = <&ib_wheel_scaler 1 8>;
         };
 
-        /* input config for mouse scroll mode on momentary mouse scoll layer (MSC1) */
+        /* input config for mouse scroll mode on momentary mouse scoll layer (MSC) */
         tb1_msl_ibl {
                 compatible = "zmk,input-behavior-listener";
                 device = <&pd1>;
-                layers = <MSC1>;
+                layers = <MSC>;
                 evt-type = <INPUT_EV_REL>;
                 
                 /* slienting x-axis with alt event code */
