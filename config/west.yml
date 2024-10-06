@@ -1,10 +1,8 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+    #- name: zmkfirmware
+    #  url-base: https://github.com/zmkfirmware
     # Additional modules containing boards/shields/custom code can be listed here as well
-    - name: sadekbaroudi
-      url-base: https://github.com/sadekbaroudi
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: petejohanson
       url-base: https://github.com/petejohanson
@@ -12,17 +10,9 @@ manifest:
       url-base: https://github.com/badjeff
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: petejohanson
       revision: feat/pointers-move-scroll
       import: app/west.yml
-    #- name: nice_view_adapter
-    #  remote: zmkfirmware
-    #  revision: main
-    #  import: app/boards/shields/nice_view_adapter/nice_view_adapter.zmk.yml
-    - name: zmk-fingerpunch-controllers
-      remote: sadekbaroudi
-      revision: main
-      import: config/deps.yml
     - name: zmk-split-peripheral-input-relay
       remote: badjeff
       revision: main
