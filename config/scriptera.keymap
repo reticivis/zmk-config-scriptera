@@ -154,9 +154,9 @@
 
         SET_layer {
             bindings = <
-&kp F9  &kp F10 &kp F11 &kp F12 &kp PSCRN       &kp SLCK    &none             &none           &none           &bootloader
-&kp F5  &kp F6  &kp F7  &kp F8  &kp INS         &kp CLCK    &kp RIGHT_CONTROL &kp RIGHT_SHIFT &kp RIGHT_ALT   &kp RIGHT_GUI
-&kp F1  &kp F2  &kp F3  &kp F4  &kp PAUSE       &kp SLCK    &none             &none           &none           &sys_reset
+&kp F9  &kp F10 &kp F11 &kp F12 &kp PSCRN               &kp SLCK    &none             &none           &none           &bootloader
+&kp F5  &kp F6  &kp F7  &kp F8  &kp INS                 &kp CLCK    &kp RIGHT_CONTROL &kp RIGHT_SHIFT &kp RIGHT_ALT   &kp RIGHT_GUI
+&kp F1  &kp F2  &kp F3  &kp F4  &kp PAUSE_BREAK         &kp SLCK    &none             &none           &none           &sys_reset
 &kp ESC &kp DEL                                                                               &none           &none
             >;
         };
