@@ -25,16 +25,20 @@
 	status = "okay"; // change to okay to enable
 };
 
+&tball1 {
+	status = "okay"; // change to okay to enable
+};
+
 / {
-	vtball0: virtual_input0 {
-		compatible = "zmk,virtual-input";
-	};
+	//vtball0: virtual_input0 {
+	//	compatible = "zmk,virtual-input";
+	//};
 	vtball1: virtual_input1 {
 		compatible = "zmk,virtual-input";
 	};
-	input_relay_config_103 {
+	input_relay_config_102 {
 		compatible = "zmk,split-peripheral-input-relay";
-		device = <&tball0>;
-		relay-channel = <103>;
+		device = <&vtball1>;
+		relay-channel = <102>;
 	};
 };
