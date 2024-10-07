@@ -26,7 +26,7 @@
     tb0_mmv_ibl {
             compatible = "zmk,input-behavior-listener";
             device = <&vtball0>;
-            layers = <DEF MSK>;
+            layers = <0 1 2 3>;
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_X>;
             y-input-code = <INPUT_REL_Y>;
@@ -36,7 +36,7 @@
     tb1_mmv_ibl {
             compatible = "zmk,input-behavior-listener";
             device = <&vtball1>;
-            layers = <DEF MSK>;
+            layers = <0 1 2 3>;
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_X>;
             y-input-code = <INPUT_REL_Y>;
@@ -59,7 +59,7 @@
     tb0_msl_ibl {
             compatible = "zmk,input-behavior-listener";
             device = <&vtball0>;
-            layers = <MSC>;
+            layers = <2>;
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_MISC>;
             y-input-code = <INPUT_REL_WHEEL>;
@@ -68,7 +68,7 @@
     tb1_msl_ibl {
             compatible = "zmk,input-behavior-listener";
             device = <&vtball1>;
-            layers = <MSC>;
+            layers = <2>;
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_MISC>;
             y-input-code = <INPUT_REL_WHEEL>;
