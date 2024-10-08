@@ -30,10 +30,10 @@
 };
 
 / {
-	//vtball0: virtual_input0 {
-	//	compatible = "zmk,virtual-input";
-	//};
-	vtball1: virtual_input1 {
+	tball1: virtual_input0 {
+		compatible = "zmk,virtual-input";
+	};
+	tball1_1: virtual_input1 {
 		compatible = "zmk,virtual-input";
 	};
 	input_relay_config_102 {
