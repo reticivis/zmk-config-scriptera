@@ -30,7 +30,7 @@
 };
 
 / {
-	tball1: virtual_input0 {
+	tball1_0: virtual_input0 {
 		compatible = "zmk,virtual-input";
 	};
 	tball1_1: virtual_input1 {

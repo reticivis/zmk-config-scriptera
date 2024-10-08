@@ -45,7 +45,7 @@
     };
     tb1_mmv_ibl {
             compatible = "zmk,input-behavior-listener";
-            device = <&tball1>;
+            device = <&tball1_0>;
             layers = <0 1 3>;
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_X>;
@@ -87,7 +87,7 @@
     };
     tb1_msl_ibl_central {
             compatible = "zmk,input-behavior-listener";
-            device = <&tball1>;
+            device = <&tball1_0>;
             layers = <2>;
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_MISC>;
