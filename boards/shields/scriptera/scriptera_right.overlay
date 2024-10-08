@@ -22,11 +22,11 @@
 };
 
 &spi0 {
-    status = "okay"; // change to okay to enable
+    status = "okay";
 };
 
 &tball1 {
-	status = "okay"; // change to okay to enable
+	status = "okay";
 };
 
 / {
