@@ -17,30 +17,7 @@
     retro-tap;
 };
 
-// -----------------
-
-    behaviors {
-        tsl: behavior_trackball_scroll {
-            compatible = "zmk,behavior-point-device-incremental";
-            #trackball-binding-cells = <0>;
-            mode = "scroll-mode";
-            flavor = "default";
-            scale_mode = "dividor";
-            scale_factor = <4>;
-            smoothing;
-        };
-
-        tkp_fast: behavior_trackball_key_press {
-            compatible = "zmk,behavior-point-device-directional";
-            #trackball-binding-cells = <4>;
-            mode = "distance-mode";
-            flavor = "2-dim";
-            step_size = <50>;
-        };
-    };
-
-// -----------------
-
+/ {
     keymap {
         compatible = "zmk,keymap";
 
