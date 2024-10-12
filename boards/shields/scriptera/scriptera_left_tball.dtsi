@@ -1,0 +1,11 @@
+&spi0 {
+    status = "disabled";
+    compatible = "nordic,nrf-spim";
+
+    tball0: tball0@0 {
+        status = "disabled";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+    };
+};

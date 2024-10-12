@@ -19,11 +19,18 @@
 
     kscan0: kscan {        
         compatible = "zmk,kscan-gpio-matrix";
+
+        diode-direction = "col2row";
+
+        row-gpios
+            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW0
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW1
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW2
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW3
+        ;
     };
 };
 
-
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -42,38 +49,5 @@
                 <NRF_PSEL(SPIM_MISO, 0, 24)>;
             low-power-enable;
         };
-    };
-};
-
-&spi0 {
-    status = "disabled";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
-
-    tball0: tball0@0 {
-        status = "disabled";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <700>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-    };
-
-    tball1_0: tball1@0 {
-        status = "disabled";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <700>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
     };
 };

@@ -1,41 +1,39 @@
 #include "scriptera.dtsi"
+#include "scriptera_right_tball.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <5>;
 };
 
 &kscan0 {
-    diode-direction = "col2row";
-    col-gpios
-        = <&pro_micro 8 (GPIO_ACTIVE_HIGH)> // COL0
-        , <&pro_micro 9 (GPIO_ACTIVE_HIGH)> // COL1
-        , <&pro_micro 10 (GPIO_ACTIVE_HIGH)> // COL2
-        , <&pro_micro 16 (GPIO_ACTIVE_HIGH)> // COL3
-        , <&pro_micro 14 (GPIO_ACTIVE_HIGH)> // COL4
-    ;
-    row-gpios
-        = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW0
-        , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW1
-        , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW2
-        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // ROW3
-    ;
+        col-gpios
+            = <&pro_micro 8 (GPIO_ACTIVE_HIGH)> // COL0
+            , <&pro_micro 9 (GPIO_ACTIVE_HIGH)> // COL1
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH)> // COL2
+            , <&pro_micro 16 (GPIO_ACTIVE_HIGH)> // COL3
+            , <&pro_micro 14 (GPIO_ACTIVE_HIGH)> // COL4
+        ;
 };
 
 &spi0 {
     status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
 };
 
 &tball1_0 {
-	status = "okay";
+	    status = "okay";
+        irq-gpios = <&gpio1 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <700>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
 };
 
-/ {
-	//tball1_0: virtual_input0 {
-	//	compatible = "zmk,virtual-input";
-	//};
-	tball1_1: virtual_input1 {
-		compatible = "zmk,virtual-input";
-	};
+/{
 	input_relay_config_102 {
 		compatible = "zmk,split-peripheral-input-relay";
 		device = <&tball1_0>;
