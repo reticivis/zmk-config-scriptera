@@ -76,7 +76,8 @@
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_MISC>;
             y-input-code = <INPUT_REL_WHEEL>;
-            bindings = <&ib_wheel_scaler 1 32>;
+            y-invert;
+            bindings = <&ib_wheel_scaler 1 128>;
     };
 
     /* input config for sniper mode on momentary mouse scoll layer (MSC) */
@@ -87,7 +88,6 @@
             evt-type = <INPUT_EV_REL>;
             x-input-code = <INPUT_REL_X>;
             y-input-code = <INPUT_REL_Y>;
-            y-invert;
             scale-multiplier = <1>;
             scale-divisor = <1>;
             bindings = <&ib_snipe_scaler_x 1 16 &ib_snipe_scaler_y 1 16>;
