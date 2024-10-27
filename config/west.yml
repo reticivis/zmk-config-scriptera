@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: urob
+      url-base: https://github.com/urob
     - name: reticivis
       url-base: https://github.com/reticivis
   projects:
@@ -26,6 +28,9 @@ manifest:
       revision: main
     - name: zmk-input-behavior-listener
       remote: badjeff
+      revision: main
+    - name: zmk-helpers
+      remote: urob
       revision: main
   self:
     path: config
