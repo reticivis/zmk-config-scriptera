@@ -91,9 +91,9 @@ ZMK_HOLD_TAP(hmr,
 
         GME_layer {
             bindings = <
-&&none      &none       &none   &none       &to 0       &to 4   &none   &none   &none   &none
+&none       &none       &none   &none       &to 0       &to 4   &none   &none   &none   &none
 &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT   &none       &none   &kp A   &kp B   &kp X   &kp Y
-&sys_reset  &none       &none   &none       &none       &none   &none   &none   &none   &none
+&none       &none       &none   &none       &none       &none   &none   &none   &none   &none
 &kp Q       &kp W                                                               &kp O   &kp P
             >;
         };
