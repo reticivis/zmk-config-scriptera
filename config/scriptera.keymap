@@ -40,6 +40,18 @@ ZMK_HOLD_TAP(hmr,
 )
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        lower_temp {
+            if-layers = <2>;
+            then-layer = <4>;
+        };
+        lower_lock {
+            if-layers = <3>;
+            then-layer = <4>;
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -83,7 +95,7 @@ ZMK_HOLD_TAP(hmr,
 &kp F9  &kp F10 &kp F11 &kp F12 &sys_reset          &sys_reset     &none                &none              &none           &soft_off
 &kp F5  &kp F6  &kp F7  &kp F8  &bootloader         &bootloader    &kp RIGHT_CONTROL    &kp RIGHT_SHIFT    &kp RIGHT_ALT   &kp RIGHT_GUI
 &kp F1  &kp F2  &kp F3  &kp F4  &studio_unlock      &bt BT_NXT     &kp C_MUTE           &kp C_VOL_DN       &kp C_VOL_UP    &kp C_PP
-&kp ESC &kp DEL                                                                                            &none           &none
+&kp ESC &kp DEL                                                                                            &none           &tog 1
             >;
         };
 
@@ -91,7 +103,7 @@ ZMK_HOLD_TAP(hmr,
 
         GME_layer {
             bindings = <
-&none       &none       &none   &none       &to 0       &to 4   &none   &none   &none   &none
+&none       &none       &none   &none       &to 0       &tog 3   &none   &none   &none   &none
 &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT   &none       &none   &kp A   &kp B   &kp X   &kp Y
 &none       &none       &none   &none       &none       &none   &none   &none   &none   &none
 &kp Q       &kp W                                                               &kp O   &kp P
