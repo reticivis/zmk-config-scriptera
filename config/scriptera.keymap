@@ -82,7 +82,7 @@ ZMK_HOLD_TAP(hmr,
             bindings = <
 &kp F9  &kp F10 &kp F11 &kp F12 &sys_reset          &sys_reset     &none                &none              &none           &soft_off
 &kp F5  &kp F6  &kp F7  &kp F8  &bootloader         &bootloader    &kp RIGHT_CONTROL    &kp RIGHT_SHIFT    &kp RIGHT_ALT   &kp RIGHT_GUI
-&kp F1  &kp F2  &kp F3  &kp F4  &studio_unlock      &bt BT_NXT     &kp C_MUTE           &kp C_VOL_DN       &kp C_VOL_UP    &kp C_PP
+&kp F1  &kp F2  &kp F3  &kp F4  &none               &bt BT_NXT     &kp C_MUTE           &kp C_VOL_DN       &kp C_VOL_UP    &kp C_PP
 &kp ESC &kp DEL                                                                                            &none           &none
             >;
         };
