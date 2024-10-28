@@ -75,6 +75,17 @@
             , <&key_physical_attrs 100 100  810  385 (-1500)   770   455>
             ;
     };
+
+    position_map {
+        compatible = "zmk,physical-layout-position-map";
+
+        complete;
+
+        default_layout {
+            physical-layout = <&default_layout>;
+            positions = <>;
+        };
+    };
 };
 
 &pinctrl {
