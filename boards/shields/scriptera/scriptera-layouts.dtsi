@@ -1,12 +1,12 @@
 #include <physical_layouts.dtsi>
 
 / {
-    layout_0: layout_0 {
+    default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Scriptera Default";
 
-        kscan = <&kscan_0>;
-        transform = <&matrix_transform_0>;
+        kscan = <&kscan0>;
+        transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   95       0     0     0>
